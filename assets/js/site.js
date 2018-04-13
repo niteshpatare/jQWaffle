@@ -47,6 +47,23 @@ $(document).ready(function(){
 
     });
 
+    $(".userPersonalUrlLink, .admin-flyMenu .menuClosebutton").on("click", function(e){
+      e.stopPropagation();
+      if(!adminFlyMenu.hasClass("showMe")){
+          adminFlyMenu.addClass("showMe");
+          if(windowWidth >768 && windowWidth <1024 ){
+              navFlyMenu.removeClass("showMe");
+          }
+      }
+      else if(adminFlyMenu.hasClass("showMe") ){
+          adminFlyMenu.removeClass("showMe");
+          if(windowWidth <768 && closeButton.hasClass("showMe")){
 
+          }
+      }
+
+    });
+
+    
 
 });
