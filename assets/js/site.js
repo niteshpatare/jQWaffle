@@ -64,6 +64,29 @@ $(document).ready(function(){
 
     });
 
-    
+    $(".dotsButton, .closeButton").on("click", function(e){
+      e.stopPropagation();
+      if(!closeButton.hasClass("showMe")){
+          closeButton.addClass("showMe");
+          dotsButton.addClass("hideMe");
+          dotsButtonLanucher.addClass("showMe");
+          navFlyMenu.removeClass("showMe");
+      }
+      else if(closeButton.hasClass("showMe") ){  //&& !navFlyMenu.hasClass("alwaysHidden")
+          closeButton.removeClass("showMe");
+          dotsButton.removeClass("hideMe");
+          dotsButtonLanucher.removeClass("showMe");
+          navFlyMenu.removeClass("showMe");
+      }
+
+    });
+
+     $( window ).resize(function() {
+      // if(navFlyMenu.hasClass("showMe") && !navFlyMenu.hasClass("alwaysHidden") && !closeButton.hasClass("showMe") && windowWidth <768 ){
+      if(navFlyMenu.hasClass("showMe") && !navFlyMenu.hasClass("alwaysHidden") && !$('.dotsButton:visible').length == 0 && windowWidth <768 ){
+           navFlyMenu.removeClass("showMe");
+       }
+     });
+
 
 });
