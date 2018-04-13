@@ -1,0 +1,133 @@
+//main:site.less
+
+/*admin fly menu*/
+.admin-flyMenu{
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    left: auto !important;
+    right: 0 !important;
+    margin: 0;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    height: ~"-webkit-calc(100vh - 50px)";
+    height: ~"-moz-calc(100vh - 50px)";
+    height: ~"calc(100vh - 50px)";
+    position: absolute;
+    outline: 0;
+    z-index: 2001;
+    top: 50px !important;
+    overflow-y: auto;
+    bottom: 0;
+    font-family: "Segoe UI Light","Segoe UI",Segoe,Tahoma,Helvetica,Arial,Sans-Serif;
+    color: #333;
+    //
+    background-color: @suitebar-color-1;
+    border-left: 1px solid #c8c8c8;
+    .menuClosebutton {
+        height: 40px;
+        margin-right: 27px!important;
+        float: right;
+        margin-top: 29px!important;
+        padding: 5px;
+        background: transparent;
+        border-width: 0px;
+
+        cursor: pointer !important;
+        font-size: 14px;
+        color:#333;
+        &:hover{
+            background-color: #fff;
+        }
+    }
+    .menuSection{
+      padding-left: 32px;
+      padding-right: 32px;
+      text-align: left;
+      .menuTitle{
+        padding-top: 24px;
+        white-space: normal;
+        font-size: 28px !important;
+        height: 61px;
+        font-family: "Segoe UI Light","Segoe UI",Segoe,Tahoma,Helvetica,Arial,Sans-Serif;
+      }
+      .personalView{
+        outline: none;
+        width: 100%;
+        display: table;
+        border-collapse: initial;
+        vertical-align: middle;
+        white-space: nowrap;
+        padding-top: 44px;
+        line-height: normal;
+        .personalPhoto{
+          position: relative;
+          vertical-align: top;
+          width: 64px;
+          height: 64px;
+          display: table-cell;
+          cursor: default!important;
+          background: transparent;
+          border-width: 0px;
+          padding: 0px;
+          font-size: 14px;
+          background-color: transparent;
+          .cardImg{
+            position: absolute;
+            overflow: hidden;
+            width: 64px;
+            height: 64px;
+            top: 0;
+            left: 0;
+            img{
+              width: 64px;
+              height: 64px;
+              border-radius: 50%;
+            }
+          }
+        }
+        .personalDetails{
+          max-width: 214px;
+          white-space: nowrap;
+          padding-left: 10px;
+          overflow: hidden;
+          display: table-cell;
+          font-family: "Segoe UI Regular","Segoe UI",Segoe,Tahoma,Helvetica,Arial,sans-serif;
+          direction: ltr;
+          text-align: left;
+          .userDisplayName{
+            font-size: 17px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+          }
+          .userEmail{
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-top: 3px;
+            display: block;
+          }
+
+
+        }
+      }
+      .linklist {
+          margin-top: 10px;
+          font-size: 12px;
+          font-family: "Segoe UI Regular","Segoe UI",Segoe,Tahoma,Helvetica,Arial,sans-serif;
+          .linkitems{
+            line-height: 30px;
+            a.linkbutton{
+              text-decoration: none;
+              background: transparent;
+              border-width: 0px;
+              padding: 0px;
+              cursor: pointer !important;
+              font-size: 14px;
+            }
+          }
+      }
+    }
+}

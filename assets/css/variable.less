@@ -1,0 +1,142 @@
+//main: site.less
+
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,700);
+
+@accent-white: #fff;
+@accent-black: #000;
+@accent-siteblue: #3498db;
+@accent-grey-bg: #ebebeb;
+@accent-sitegrey: #222;
+@accent-greyd: #ddd;
+@accent-voilet-bg:#9b59b6;
+@accent-green-bg:#1abc9c;
+@accent-777:#777;
+@accent-grey1: #828384;
+@main-font: 'Istok Web', sans-serif;
+@header-font: 'Open Sans', sans-serif;
+
+@navbarIcon: #2dbaec;
+@navWrapper: #505154;
+@navAnchor: #2dbaec;
+@navAnchorBg: #505154;
+@srchAppTitle: #3f3f3f;
+@newsLinkStyle: #62568f;
+@navListMenu: #30abd8;
+
+@myAppColor1:#008383;
+@myAppColor2:#049fda;
+@myAppColor3:#20174c;
+@myAppColor4:#008383;
+
+@font-SegoeUI-1: ~"'SegoeUI-SemiLight-final','Segoe UI SemiLight','Segoe UI WPC Semilight','Segoe UI',Segoe,Tahoma,Helvetica,Arial,sans-serif";
+@font-SegoeUI-2: ~'"Segoe UI Semibold","Segoe UI Web Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Segoe,Tahoma,Arial,sans-serif';
+@font-SegoeUI-3: ~'"SegoeUI-Regular-final","Segoe UI","Segoe UI WPC",Segoe,Tahoma,Helvetica,Arial,sans-serif';
+
+@suitebar-color-1: #e7e8e8;
+@suitebar-color-2: #404040;
+@suitebar-color-3: #333;
+
+@flymenu-color-1: #333;
+@flymenu-color-2: #b9dde7;
+@flymenu-color-3: #92c0e0;
+@flymenu-color-4: #e6f2fa;
+@flymenu-color-5: #eaeaea;
+
+
+@flymenu-yammerBg:#2bc4f2;
+@flymenu-onedriveBg:#2bc4f2;
+@flymenu-wordBg:rgb(43, 87, 154);
+@flymenu-excelBg:rgb(210, 71, 38);
+@flymenu-powerpointBg:#2bc4f2;
+@flymenu-onenoteBg:rgb(128, 57, 123);
+@flymenu-adminBg:rgb(88, 89, 91);
+
+
+// Media Queries
+@mobile-xxs-max-1: ~"screen and (max-width: 320px)";
+@mobile-xxs-min-max-1: ~"screen and (min-width: 321px) and (max-width:460px)";
+@mobile-xxs-min-max-2: ~"screen and (min-width: 460px) and (max-width:768px)";
+@mobile-sm-min-max-1: ~"screen and (min-width: 768px) and (max-width:992px)";
+@mobile-md-min-max-1: ~"screen and (min-width: 992px) and (max-width:1200px)";
+@mobile-lg-min-max-1: ~"screen and (min-width: 1200px) and (max-width:1400px)";
+@mobile-lg-min-1: ~"screen and (min-width: 1200px)";
+@mobile-xxs-min-max-device-1: ~"only screen and (min-device-width : 320px) and (max-device-width :568px)";
+@mobile-xxs-min-max-device-2: ~"only screen and (min-device-width : 375px) and (max-device-width :667px)";
+
+@mobile-sm-max-1: ~"screen and (max-width:768px)";
+@mobile-sm-min-1: ~"screen and (min-width:768px)";
+@mobile-md-min-1: ~"screen and (min-width:992px)";
+@mobile-md-min-2: ~"screen and (min-width:1024px)";
+@mobile-md-max-1: ~"screen and (max-width:1024px)";
+
+@mobile-smmd-max-1 : ~"screen and (max-width: 639px)";
+
+@accent-white: #fff;
+@accent-black: #000;
+@accent-siteblue: #3498db;
+@accent-grey-bg: #ebebeb;
+@accent-sitegrey: #222;
+@accent-greyd: #ddd;
+@accent-voilet-bg:#9b59b6;
+@accent-green-bg:#1abc9c;
+@accent-777:#777;
+@accent-grey1: #828384;
+@main-font: 'Istok Web', sans-serif;
+@header-font: 'Istok Web', sans-serif;
+
+@navbarIcon: #2dbaec;
+@navWrapper: #505154;
+@navAnchor: #2dbaec;
+@navAnchorBg: #505154;
+@srchAppTitle: #3f3f3f;
+@newsLinkStyle: #62568f;
+@navListMenu: #30abd8;
+
+@myAppColor1:#008383;
+@myAppColor2:#049fda;
+@myAppColor3:#20174c;
+@myAppColor4:#008383;
+
+@font-SegoeUI-1: ~"'SegoeUI-SemiLight-final','Segoe UI SemiLight','Segoe UI WPC Semilight','Segoe UI',Segoe,Tahoma,Helvetica,Arial,sans-serif";
+@font-SegoeUI-2: ~'"Segoe UI Semibold","Segoe UI Web Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Segoe,Tahoma,Arial,sans-serif';
+@font-SegoeUI-3: ~'"SegoeUI-Regular-final","Segoe UI","Segoe UI WPC",Segoe,Tahoma,Helvetica,Arial,sans-serif';
+
+@suitebar-color-1: #f4f4f4;
+@suitebar-color-2: #404040;
+@suitebar-color-3: #333;
+
+@flymenu-color-1: #333;
+@flymenu-color-2: #b9dde7;
+@flymenu-color-3: #92c0e0;
+@flymenu-color-4: #e6f2fa;
+@flymenu-color-5: #eaeaea;
+
+
+@flymenu-defaultBg: #0072c6;
+//@flymenu-yammerBg:#2bc4f2;
+//@flymenu-onedriveBg:#2bc4f2;
+@flymenu-wordBg:rgb(43, 87, 154);
+@flymenu-excelBg: rgb(33, 115, 70);
+@flymenu-powerpointBg:rgb(210, 71, 38);
+@flymenu-onenoteBg:rgb(128, 57, 123);
+@flymenu-adminBg:rgb(88, 89, 91);
+
+
+// Media Queries
+@mobile-xxs-max-1: ~"screen and (max-width: 320px)";
+@mobile-xxs-min-max-1: ~"screen and (min-width: 321px) and (max-width:460px)";
+@mobile-xxs-min-max-2: ~"screen and (min-width: 460px) and (max-width:768px)";
+@mobile-sm-min-max-1: ~"screen and (min-width: 768px) and (max-width:992px)";
+@mobile-md-min-max-1: ~"screen and (min-width: 992px) and (max-width:1200px)";
+@mobile-lg-min-max-1: ~"screen and (min-width: 1200px) and (max-width:1400px)";
+@mobile-lg-min-1: ~"screen and (min-width: 1200px)";
+@mobile-xxs-min-max-device-1: ~"only screen and (min-device-width : 320px) and (max-device-width :568px)";
+@mobile-xxs-min-max-device-2: ~"only screen and (min-device-width : 375px) and (max-device-width :667px)";
+
+@mobile-sm-max-1: ~"screen and (max-width:768px)";
+@mobile-sm-min-1: ~"screen and (min-width:768px)";
+@mobile-md-min-1: ~"screen and (min-width:992px)";
+@mobile-md-min-2: ~"screen and (min-width:1024px)";
+@mobile-md-max-1: ~"screen and (max-width:1024px)";
+
+@mobile-smmd-max-1 : ~"screen and (max-width: 639px)";

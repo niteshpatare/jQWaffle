@@ -1,0 +1,77 @@
+//out: site.min.css, sourcemap:true, compress: false
+@import "bootstrap.min.css";
+@import "variable.less";
+@import "officeFontIcons.css";
+@import "waffleTopNavbar.less";
+@import "bootstrapNavbar.less";
+@import "adminMenu.less";
+@import "waffleMenu.less";
+@import "waffle.less";
+
+/**/
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+html { font-size: 62.5%;}
+body {
+	line-height: 2.4rem;
+	font-family: @main-font;
+	word-break: break-word;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: @header-font;
+	font-weight: 800;
+}
+.h3, h3 {
+    font-size: 2.6rem;
+}
+.h4, h4 {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+}
+.h5, h5 {
+    font-size: 1.4rem;
+}
+ol,ul{
+	  margin-left: 0px;
+    padding-left: 0px;
+		list-style: disc;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.text-ellipsis{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    display: inline-block;
+}
+nav.navbar {
+  	margin-bottom:0;
+  .navbar-brand{ padding:0 10px;
+  }
+}
+html{-ms-overflow-style: scrollbar;} or body{-ms-overflow-style: scrollbar;}
+#HomePLContainer img{
+  max-width: 100%;
+}
+#userPersonalUrl{
+    display: table-cell;
+    vertical-align: top;
+		text-decoration:none;
+}
+.nav-flyMenu {
+    display: none;
+}
+
+.admin-flyMenu {
+    display: none;
+}
+.alwaysHidden {
+    display: none !important;
+}
+.showMe {
+    display: block;
+}

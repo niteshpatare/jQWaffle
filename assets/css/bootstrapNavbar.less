@@ -1,0 +1,198 @@
+//main: site.less
+
+//logobar
+.logo-wrapper{
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 100%;
+
+    img{
+      display: table-cell;
+      text-align: center;
+      margin: 0 auto;
+          padding: 23px 0;
+    }
+}
+nav .navbar-header {
+    min-height: 60px;
+}
+.navbar-toggle{
+  // display: none;
+  margin-bottom: 5px;
+  &::after {
+    content: "\e014";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: @navbarIcon;
+    font-size: 2.5rem;
+    border: 0;
+  }
+  &.collapsed{
+
+    height: 40px;
+    &::after {
+      content: "";
+    }
+    .icon-bar {
+        height: 4px;
+        background: @navbarIcon;
+        display: block;
+    }
+  }
+
+  .icon-bar {
+      display: none;
+      height: 4px;
+      background: @navbarIcon;
+  }
+}
+
+
+
+.nav-wrapper{
+    background-color: @navWrapper;
+    //border-bottom: 5px solid #484a4c;
+    //padding-top: 0;
+    min-height: 60px;
+    padding: 0px;
+    &.collapsing {
+      min-height: 0px;
+    }
+    &.navbar-collapse{
+      &.collapse{
+        &.in{
+          background-color: transparent;
+          ul.nav-list-menu{
+            li{
+              display: block;
+              width: 100%;
+              &.selected{
+                a{
+                  background-color: @navAnchor;
+                  color: white;
+                  border: 0;
+                }
+              }
+              a{
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 20px;
+                margin: 10px 0;
+                background-color: @navAnchorBg;
+                &:hover{
+                  background-color: @navAnchor;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .navbar-collapse {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    ul.nav-list-menu{
+      width: 100%;
+      list-style-type: none;
+      padding-left: 0px;
+      margin:0;
+      li{
+        &:hover, &.selected {
+          font-weight: 700;
+          color: @accent-white !important;
+          text-decoration: none;
+          // background-color: #2dbaec;
+        //  a{
+            color: @accent-white !important;
+            border-bottom: 5px solid @navListMenu !important;
+            border: none !important;
+            background-color: @navAnchor;
+          //}
+        }
+        font-family: @main-font;
+        font-size: 1.4rem;
+        color: @accent-white;
+        font-weight: 700;
+        background: none;
+        transition: background-color .3s ease;
+        border-bottom: 0;
+        width: 14%;
+        padding: 0;
+        display: inline-block;
+        a{
+          width: 100%;
+          text-align: center;
+          display: block;
+          padding: 20px 0 15px;
+          color: @accent-white;
+          font-weight: 700;
+          border-color: transparent;
+          transition: border-color .3s ease;
+          transition: background-color .3s ease;
+          min-height: 60px;
+          &:hover{
+            text-decoration: none;
+            transition: background-color .3s ease;
+          }
+        }
+      }
+    }
+}
+//added later
+.nav-wrapper ul.nav-list-menu li {
+    float:none;
+}
+.nav-wrapper ul.nav-list-menu {
+    text-align: center;
+    margin: 0 auto;
+}
+.nav-wrapper .container{
+    margin: 0 auto;
+}
+@media @mobile-sm-max-1{
+  .nav-wrapper{
+
+      background: transparent;
+      ul.nav-list-menu li {
+        display: block;
+        width: 100%;
+        //transition: none;
+        &:hover{
+          background-color: @navAnchor;
+          a{
+              background-color: @navAnchor;
+          }
+        }
+        a{
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 20px;
+          margin: 10px 0;
+          background-color: @navAnchorBg;
+          //transition: none;
+          &:hover{
+            background-color: @navAnchor;
+
+          }
+        }
+      }
+
+  }
+}
+@media @mobile-lg-min-max-1{
+    .nav-wrapper ul.nav-list-menu li {
+        width: 15%;
+        float:none;
+    }
+}

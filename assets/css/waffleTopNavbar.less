@@ -1,0 +1,198 @@
+//main:site.less
+
+//Topnav suitebar wrapper
+.nav-Button-mixin(){
+  display: block;
+  vertical-align: middle;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: normal;
+  overflow: visible;
+  //cursor: pointer;
+}
+.suiteBarWrapper
+{
+  height: 50px;
+  position: relative;
+  background-color: @suitebar-color-1;
+  font-family: @font-SegoeUI-1;
+  font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+  .suiteBarNav-header{
+      width: 100%;
+      height: 50px;
+      display: table;
+      border-spacing: 0;
+      white-space: nowrap;
+      line-height: normal;
+      .navItem {
+          display: table-cell;
+          vertical-align: middle;
+      }
+      .navItem-leftAlign, .navItem-rightAlign{
+        button{
+            &:focus{ outline: none;}
+            background-color: @suitebar-color-1;
+            color: @suitebar-color-2;
+            transition: background-color .467s cubic-bezier(.1,.9,.2,1) 34ms;
+
+            .nav-Button-mixin;
+            font-size: 1.4rem;
+            min-width: 50px !important;
+            &.appLauncherBackground {
+                background-color: @suitebar-color-3;
+            }
+            .glyphicon {
+                font-size: 2rem;
+            }
+
+        }
+        .navTopItem {
+            display: inline-block;
+            vertical-align: top;
+
+            .nav-bposLogo{
+              display: inline-block;
+              white-space: nowrap;
+              vertical-align: middle;
+              padding: 0 20px;
+              height: 50px;
+              color: @suitebar-color-2;
+              .nav-brandingText{
+                line-height: 5rem;
+                display: inline-block;
+                font-size: 2.2rem;
+                -webkit-font-smoothing: antialiased;
+              }
+            }
+        }
+        .nav-BrandingTxt
+        {
+            padding-right: 20px;
+            border-left: 1px solid rgba(255,255,255,.3);
+        }
+      }
+      .navItem-leftAlign{
+        .closeButton{
+            display:none;
+            vertical-align: top;
+        }
+        .closeButton.showMe {
+            display: none;
+        }
+      }
+      .navItem-centerAlign{
+        width: 100%;
+        text-align: center;
+      }
+      .navItem-rightAlign{
+        vertical-align: top;
+        text-align: right;
+        .appLauncherRight, .dotsButton, .dotsButtonLanucher, .closeButton{
+            display:none;
+            vertical-align: top;
+        }
+
+
+        .navMenuButton{
+
+          .nav-accBox{
+            max-width: 176px;
+            display: table;
+            border-left: 1px solid rgba(255,255,255,.3);
+            .nav-accButton{
+              .nav-Button-mixin;
+              display: table-cell;
+              .nav-accButton-img-container{
+                position: absolute;
+                overflow: hidden;
+                display: inline-block;
+                margin-top: 7px;
+                right: 6px;
+                top: 0;
+              }
+              .nav-accButton-circular-small{
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+              }
+            }
+            .nav-accTitle{
+              text-align: right;
+              vertical-align: middle;
+              display: table-cell;
+
+              .nav-accDisplayname {
+                overflow: hidden;
+                max-width: 126px;
+                width: 126px;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                white-space: nowrap;
+                .nav-accTopnavText{
+                  color: @suitebar-color-2;
+                  &:hover{
+                    color: @suitebar-color-2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+}
+
+
+
+@media @mobile-sm-max-1{
+
+  .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign .appLauncherRight{
+      display:none !important;
+  }
+  .suiteBarWrapper .suiteBarNav-header .navMenuButton .nav-accTitle{ display: none;}
+  .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign{
+    .dotsButtonLanucher{
+          border-right: 1px solid rgba(255,255,255,0.3)
+    }
+    .appLauncherRight.dotsButton{
+        display: block !important;
+    }
+  }
+  .suiteBarWrapper .suiteBarNav-header .navItem-leftAlign{
+    .closeButton.showMe {
+        display: block;
+    }
+  }
+  .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign{
+    .hideMe.dotsButton {
+       display: none !important;
+    }
+    .dotsButtonLanucher.showMe{
+      display: block;
+    }
+  }
+}
+@media @mobile-md-max-1{
+    .suiteBarWrapper .suiteBarNav-header .navItem-leftAlign .nav-BrandingTxt{
+        display:none;
+    }
+    .suiteBarWrapper .suiteBarNav-header .navTopItem .appLauncherLeft,
+    .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign .appLauncherRight.dotsButton{
+        display:none;
+    }
+    .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign .appLauncherRight{
+        display: table-cell;
+        border-right: 1px solid rgba(255,255,255,0.3);
+    }
+}
+
+@media  @mobile-smmd-max-1 {
+  .suiteBarWrapper .suiteBarNav-header .navItem-rightAlign .navMenuButton .nav-accBox .nav-accTitle{
+    display: none !important;
+  }
+}

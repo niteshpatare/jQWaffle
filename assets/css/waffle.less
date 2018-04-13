@@ -1,0 +1,48 @@
+//main: site.less
+
+:focus {
+    outline: none;
+}
+
+body{
+    [class^="ms-Icon--"]:before, [class*=" ms-Icon--"]:before {
+        font-family: "Office365Icons","o365Icons";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.nav-accBoxMainTable{
+    display:table;
+}
+
+//should be below sequence
+.nav-flyMenu {
+    display: none;
+}
+
+.admin-flyMenu {
+    display: none;
+}
+.alwaysHidden {
+    display: none !important;
+}
+
+.showMe {
+    display: block;
+}
+
+//new css
+.hideMe{
+    display: none;
+}
