@@ -1,13 +1,10 @@
 (function($){
   $.fn.jQWaffle = function(options){
 
-    console.log('jQWaffle');
     let settings = $.extend({
          // These are the defaults.
          waffleMenuActionList: ["open","close","toggle"], //values- open,close,toggle
          accountMenuActionList: ["open","close","toggle"],
-         waffleMenuAction: 'close',
-         accountMenuAction: 'close',
        },
        options
     );
@@ -24,49 +21,11 @@
     let windowWidth = $(window).width();
     let element = this;
 
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[0] ) {
-        element.each(function(){
-          console.log(element+'Open waffleMenuAction code');
-        });
-    }
-
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[1] ) {
-        element.each(function(){
-          console.log(element+'Close waffleMenuAction code');
-        });
-    }
-
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[2] ) {
-        element.each(function(e){
-          console.log(element+'toggle waffleMenuAction code');
-          waffleToggle(e);
-        });
-    }
-
-    if ( settings.accountMenuAction === settings.accountMenuActionList[0]) {
-        element.each(function(){
-          console.log(element+'Open accountMenuAction code');
-        });
-    }
-
-    if ( settings.accountMenuAction === settings.accountMenuActionList[1] ) {
-        element.each(function(){
-          console.log(element+'Close accountMenuAction code');
-        });
-    }
-
-    if ( settings.accountMenuAction === settings.accountMenuActionList[2] ) {
-        return element.each(function(){
-          console.log(element+'Toggle accountMenuAction code');
-        });
-    }
-
-//
-
-
     $(document).on("click",function(e)
     {
-        alwaysHidden(e);
+        if(!$($navFlyMenu).hasClass('alwaysHidden')){
+            alwaysHidden(e);
+        }
     });
 
     $( $waffleLauncher , $waffleMobileLauncher).on("click", function(e){
@@ -77,28 +36,28 @@
       adminToggle(e);
     });
 
-if($adminCloseButton){
-    $('body .admin-flyMenu .menuClosebutton ').on("click", $adminCloseButton, function(e){
-      adminToggle(e);
-    });
-}
+    if($adminCloseButton){
+        $('body .admin-flyMenu .menuClosebutton ').on("click", $adminCloseButton, function(e){
+          adminToggle(e);
+        });
+    }
 
     $($dotsButton , $closeButton).on("click", function(e){
       closeToggle(e);
     });
 
-if($closeButton){
-    $($closeButton).on("click", function(e){
-      closeToggle(e);
-    });
-}
+    if($closeButton){
+        $($closeButton).on("click", function(e){
+          closeToggle(e);
+        });
+    }
 
     $( window ).resize(function() {
       resizeToggle();
     });
 
     let waffleToggle = function(e){
-      e.stopPropagation();
+      if(e) e.stopPropagation();
       if(!$navFlyMenu.hasClass("showMe")){
           $navFlyMenu.addClass("showMe");
           $navFlyMenu.removeClass("alwaysHidden");
@@ -127,7 +86,7 @@ if($closeButton){
     };
 
     let closeToggle = function(e){
-      e.stopPropagation();
+      if(e) e.stopPropagation();
       if(!$closeButton.hasClass("showMe")){
           $closeButton.addClass("showMe");
           $dotsButton.addClass("hideMe");
@@ -149,7 +108,7 @@ if($closeButton){
     };
 
     let adminToggle = function(e){
-      e.stopPropagation();
+      if(e) e.stopPropagation();
       if(!$adminFlyMenu.hasClass("showMe")){
           $adminFlyMenu.addClass("showMe");
           if(windowWidth >768 && windowWidth <1024 ){
@@ -165,7 +124,7 @@ if($closeButton){
     };
 
     let alwaysHidden = function(e){
-      e.stopPropagation();
+      if(e) e.stopPropagation();
       let container = $($navFlyMenu);
       // if the target of the click isn't the container nor a descendant of the container
       if (!container.is(e.target) && container.has(e.target).length === 0 )
@@ -175,7 +134,48 @@ if($closeButton){
     };
 
 //
+if ( settings.waffleMenuAction === settings.waffleMenuActionList[0] ) {
+    element.each(function(e){
+      console.log(element+'Open waffleMenuAction code');
+      $navFlyMenu.addClass("showMe");
+    });
+}
 
+if ( settings.waffleMenuAction === settings.waffleMenuActionList[1] ) {
+    element.each(function(e){
+      console.log(element+'Close waffleMenuAction code');
+      $navFlyMenu.removeClass("showMe");
+    });
+}
+
+if ( settings.waffleMenuAction === settings.waffleMenuActionList[2] ) {
+    element.each(function(e){
+      console.log(element+'toggle waffleMenuAction code');
+      $navFlyMenu.toggleClass("showMe");
+    });
+}
+
+if ( settings.accountMenuAction === settings.accountMenuActionList[0]) {
+    element.each(function(e){
+      console.log(element+'Open accountMenuAction code');
+      $adminFlyMenu.addClass("showMe");
+    });
+}
+
+if ( settings.accountMenuAction === settings.accountMenuActionList[1] ) {
+    element.each(function(e){
+      console.log(element+'Close accountMenuAction code');
+      $adminFlyMenu.removeClass("showMe");
+    });
+}
+
+if ( settings.accountMenuAction === settings.accountMenuActionList[2] ) {
+    return element.each(function(e){
+      console.log(element+'Toggle accountMenuAction code');
+      $adminFlyMenu.toggleClass("showMe");
+    });
+}
+//
   }
 
 
