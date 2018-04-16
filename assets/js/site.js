@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 
       var $adminOpenButton = $(".userPersonalUrlLink");
-      var $adminCloseButton = $(".admin-flyMenu .menuClosebutton");
+      var $adminCloseButton = $(".admin-flyMenu .menuClosebutton span.ms-Icon--x");
 
       var windowWidth = $(window).width();
       $(document).on("click",function(e)
@@ -54,22 +54,33 @@ $(document).ready(function(){
 
     });
 
-    $($adminOpenButton, $adminCloseButton).on("click", function(e){
-      e.stopPropagation();
-      if(!$adminFlyMenu.hasClass("showMe")){
-          $adminFlyMenu.addClass("showMe");
-          if(windowWidth >768 && windowWidth <1024 ){
-              $navFlyMenu.removeClass("showMe");
-          }
-      }
-      else if($adminFlyMenu.hasClass("showMe") ){
-          $adminFlyMenu.removeClass("showMe");
-          if(windowWidth <768 && $closeButton.hasClass("showMe")){
-
-          }
-      }
-
+    $($adminOpenButton ).on("click", function(e){
+        e.stopPropagation();
+        adminToggle();
     });
+
+    $('body').on("click", $adminCloseButton, function(e){
+        e.stopPropagation();
+        adminToggle();
+    });
+
+
+var adminToggle = function(){
+  if(!$adminFlyMenu.hasClass("showMe")){
+      $adminFlyMenu.addClass("showMe");
+      if(windowWidth >768 && windowWidth <1024 ){
+          $navFlyMenu.removeClass("showMe");
+      }
+  }
+  else if($adminFlyMenu.hasClass("showMe") ){
+      $adminFlyMenu.removeClass("showMe");
+      if(windowWidth <768 && $closeButton.hasClass("showMe")){
+
+      }
+  }
+  return;
+}
+
 
     $($dotsButton , $closeButton).on("click", function(e){
       e.stopPropagation();
