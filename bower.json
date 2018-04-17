@@ -1,10 +1,10 @@
 {
   "name": "jqwaffle",
   "title": "jQWaffle",
-  "version": "1.0.0",
+  "version": "v1.0.0",
   "description": "Office 365 Navigation Replica.",
   "main": [
-    "assets/js/jQWaffle-1.0.js",
+    "assets/js/jqwaffle.min.js",
     "assets/css/jQWaffle.min.css",
 	"index.html"
   ],
