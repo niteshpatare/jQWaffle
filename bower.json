@@ -6,7 +6,7 @@
   "main": [
     "src/assets/js/jqwaffle.js",  
     "src/assets/css/jQWaffle.css",
-	  "src/index.html"
+    "src/index.html"
   ],
   "dependencies": {
     "jquery": "~1.12.4"
