@@ -13,9 +13,7 @@
   "devDependencies": {
   },
   "moduleType": [
-    "amd",
     "globals",
-    "node"
   ],
   "keywords": [
     "office365 waffle",
