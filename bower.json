@@ -4,9 +4,11 @@
   "version": "v1.0.0",
   "description": "Office 365 Navigation Replica.",
   "main": [
-    "assets/js/jqwaffle.js",
-    "assets/css/jQWaffle.css",
-	"index.html"
+    "src/assets/js/bootstrap.min.js",
+    "src/assets/js/jqwaffle.js",
+    "src/assets/js/site.js",    
+    "src/assets/css/jQWaffle.css",
+	  "src/index.html"
   ],
   "dependencies": {
     "jquery": "~1.12.4"
