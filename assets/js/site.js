@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-     $('body').jQWaffle(
-     );
+  $('body').jQWaffle();
 
 });
