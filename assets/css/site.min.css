@@ -395,7 +395,10 @@ nav .navbar-header {
   font-size: 14px;
   color: #333;
 }
-.admin-flyMenu .menuClosebutton:hover {
+.admin-flyMenu .menuClosebutton span {
+  padding: 5px;
+}
+.admin-flyMenu .menuClosebutton span:hover {
   background-color: #fff;
 }
 .admin-flyMenu .menuSection {
@@ -501,7 +504,7 @@ nav .navbar-header {
   min-height: 100% !important;
   position: absolute;
   outline: 0px;
-  z-index: 2001;
+  z-index: 2002;
   top: 0px;
   overflow-y: auto;
   bottom: 0;
