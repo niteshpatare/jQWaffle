@@ -1,3 +1,5 @@
+/* jQWaffle-v1.0.0 */
+
 (function($){
   $.fn.jQWaffle = function(options){
 
@@ -93,7 +95,7 @@
           $dotsButtonLanucher.addClass("showMe");
           $navFlyMenu.removeClass("showMe");
       }
-      else if($closeButton.hasClass("showMe") ){  //&& !$navFlyMenu.hasClass("alwaysHidden")
+      else if($closeButton.hasClass("showMe") ){
           $closeButton.removeClass("showMe");
           $dotsButton.removeClass("hideMe");
           $dotsButtonLanucher.removeClass("showMe");
@@ -133,49 +135,48 @@
       }
     };
 
-//
-if ( settings.waffleMenuAction === settings.waffleMenuActionList[0] ) {
-    element.each(function(e){
-      console.log(element+'Open waffleMenuAction code');
-      $navFlyMenu.addClass("showMe");
-    });
-}
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList[0] ) {
+        element.each(function(e){
+          console.log(element+'Open waffleMenuAction code');
+          $navFlyMenu.addClass("showMe");
+        });
+    }
 
-if ( settings.waffleMenuAction === settings.waffleMenuActionList[1] ) {
-    element.each(function(e){
-      console.log(element+'Close waffleMenuAction code');
-      $navFlyMenu.removeClass("showMe");
-    });
-}
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList[1] ) {
+        element.each(function(e){
+          console.log(element+'Close waffleMenuAction code');
+          $navFlyMenu.removeClass("showMe");
+        });
+    }
 
-if ( settings.waffleMenuAction === settings.waffleMenuActionList[2] ) {
-    element.each(function(e){
-      console.log(element+'toggle waffleMenuAction code');
-      $navFlyMenu.toggleClass("showMe");
-    });
-}
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList[2] ) {
+        element.each(function(e){
+          console.log(element+'toggle waffleMenuAction code');
+          $navFlyMenu.toggleClass("showMe");
+        });
+    }
 
-if ( settings.accountMenuAction === settings.accountMenuActionList[0]) {
-    element.each(function(e){
-      console.log(element+'Open accountMenuAction code');
-      $adminFlyMenu.addClass("showMe");
-    });
-}
+    if ( settings.accountMenuAction === settings.accountMenuActionList[0]) {
+        element.each(function(e){
+          console.log(element+'Open accountMenuAction code');
+          $adminFlyMenu.addClass("showMe");
+        });
+    }
 
-if ( settings.accountMenuAction === settings.accountMenuActionList[1] ) {
-    element.each(function(e){
-      console.log(element+'Close accountMenuAction code');
-      $adminFlyMenu.removeClass("showMe");
-    });
-}
+    if ( settings.accountMenuAction === settings.accountMenuActionList[1] ) {
+        element.each(function(e){
+          console.log(element+'Close accountMenuAction code');
+          $adminFlyMenu.removeClass("showMe");
+        });
+    }
 
-if ( settings.accountMenuAction === settings.accountMenuActionList[2] ) {
-    return element.each(function(e){
-      console.log(element+'Toggle accountMenuAction code');
-      $adminFlyMenu.toggleClass("showMe");
-    });
-}
-//
+    if ( settings.accountMenuAction === settings.accountMenuActionList[2] ) {
+        return element.each(function(e){
+          console.log(element+'Toggle accountMenuAction code');
+          $adminFlyMenu.toggleClass("showMe");
+        });
+    }
+
   }
 
 
