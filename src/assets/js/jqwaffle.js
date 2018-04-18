@@ -4,11 +4,19 @@
   $.fn.jQWaffle = function(options){
 
     let settings = $.extend({
-         // These are the defaults.
-         waffleMenuActionList: ["open","close","toggle"], //values- open,close,toggle
-         accountMenuActionList: ["open","close","toggle"],
-       },
-       options
+        // These are the defaults.
+        waffleMenuActionList: {
+           open: "open",
+           close: "close",
+           toggle: "toggle"
+        },
+        accountMenuActionList: {
+            open: "open",
+            close: "close",
+            toggle: "toggle"
+        }
+      },
+      options
     );
 
     let $navFlyMenu = $(".nav-flyMenu");
@@ -23,42 +31,41 @@
     let windowWidth = $(window).width();
     let element = this;
 
-    $(document).on("click",function(e)
-    {
+    $(document).on("click", (e) => {
         if(!$($navFlyMenu).hasClass('alwaysHidden')){
             alwaysHidden(e);
         }
     });
 
-    $( $waffleLauncher , $waffleMobileLauncher).on("click", function(e){
+    $( $waffleLauncher , $waffleMobileLauncher).on("click", (e) => {
         waffleToggle(e);
     });
 
-    $($adminOpenButton ).on("click", function(e){
+    $($adminOpenButton ).on("click", (e) => {
       adminToggle(e);
     });
 
     if($adminCloseButton){
-        $('body .admin-flyMenu .menuClosebutton ').on("click", $adminCloseButton, function(e){
+        $('body .admin-flyMenu .menuClosebutton ').on("click", $adminCloseButton, (e) => {
           adminToggle(e);
         });
     }
 
-    $($dotsButton , $closeButton).on("click", function(e){
+    $($dotsButton , $closeButton).on("click", (e) => {
       closeToggle(e);
     });
 
     if($closeButton){
-        $($closeButton).on("click", function(e){
+        $($closeButton).on("click", (e) => {
           closeToggle(e);
         });
     }
 
-    $( window ).resize(function() {
+    $( window ).resize( () => {
       resizeToggle();
     });
 
-    let waffleToggle = function(e){
+    let waffleToggle = (e) => {
       if(e) e.stopPropagation();
       if(!$navFlyMenu.hasClass("showMe")){
           $navFlyMenu.addClass("showMe");
@@ -87,7 +94,7 @@
       }
     };
 
-    let closeToggle = function(e){
+    let closeToggle = (e) => {
       if(e) e.stopPropagation();
       if(!$closeButton.hasClass("showMe")){
           $closeButton.addClass("showMe");
@@ -103,13 +110,13 @@
       }
     };
 
-    let resizeToggle = function(){
+    let resizeToggle = () => {
       if($navFlyMenu.hasClass("showMe") && !$navFlyMenu.hasClass("alwaysHidden") && !$($dotsButton + ':visible').length == 0 && windowWidth <768 ){
           $navFlyMenu.removeClass("showMe");
       }
     };
 
-    let adminToggle = function(e){
+    let adminToggle = (e) => {
       if(e) e.stopPropagation();
       if(!$adminFlyMenu.hasClass("showMe")){
           $adminFlyMenu.addClass("showMe");
@@ -125,7 +132,7 @@
       return;
     };
 
-    let alwaysHidden = function(e){
+    let alwaysHidden = (e) => {
       if(e) e.stopPropagation();
       let container = $($navFlyMenu);
       // if the target of the click isn't the container nor a descendant of the container
@@ -135,51 +142,48 @@
       }
     };
 
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[0] ) {
-        element.each(function(e){
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList.open ) {
+        element.each( (e) => {
           console.log(element+'Open waffleMenuAction code');
           $navFlyMenu.addClass("showMe");
         });
     }
 
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[1] ) {
-        element.each(function(e){
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList.close ) {
+        element.each( (e) => {
           console.log(element+'Close waffleMenuAction code');
           $navFlyMenu.removeClass("showMe");
         });
     }
 
-    if ( settings.waffleMenuAction === settings.waffleMenuActionList[2] ) {
-        element.each(function(e){
+    if ( settings.waffleMenuAction === settings.waffleMenuActionList.toggle ) {
+        element.each( (e) => {
           console.log(element+'toggle waffleMenuAction code');
           $navFlyMenu.toggleClass("showMe");
         });
     }
 
-    if ( settings.accountMenuAction === settings.accountMenuActionList[0]) {
-        element.each(function(e){
+    if ( settings.accountMenuAction === settings.accountMenuActionList.open) {
+        element.each( (e) => {
           console.log(element+'Open accountMenuAction code');
           $adminFlyMenu.addClass("showMe");
         });
     }
 
-    if ( settings.accountMenuAction === settings.accountMenuActionList[1] ) {
-        element.each(function(e){
+    if ( settings.accountMenuAction === settings.accountMenuActionList.close ) {
+        element.each( (e) => {
           console.log(element+'Close accountMenuAction code');
           $adminFlyMenu.removeClass("showMe");
         });
     }
 
-    if ( settings.accountMenuAction === settings.accountMenuActionList[2] ) {
-        return element.each(function(e){
+    if ( settings.accountMenuAction === settings.accountMenuActionList.toggle ) {
+        return element.each( (e) => {
           console.log(element+'Toggle accountMenuAction code');
           $adminFlyMenu.toggleClass("showMe");
         });
     }
 
   }
-
-
-
 
 })(jQuery);
