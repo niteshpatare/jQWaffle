@@ -712,7 +712,6 @@ body [class*=" ms-Icon--"]:before {
 .hideMe {
   display: none;
 }
-/**/
 @-ms-viewport {
   width: device-width;
 }
@@ -801,3 +800,4 @@ or body {
 .showMe {
   display: block;
 }
+/*# sourceMappingURL=./site.css.map */

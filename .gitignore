@@ -1,3 +1,4 @@
 /node_modules
 *.yml
 Install Steps.txt
+/.vscode
