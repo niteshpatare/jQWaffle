@@ -2,10 +2,10 @@
 A jQuery implementation of the Waffle navigation in Office 365.
 
 Examples:-
-https://niteshp27.github.io/jQWaffle/
+https://niteshpatare.github.io/jQWaffle/
 
 See wiki How to Use:-
-https://github.com/niteshp27/jQWaffle/wiki
+https://github.com/niteshpatare/jQWaffle/wiki
 
 License
 Alertify is licensed under MIT http://www.opensource.org/licenses/MIT
